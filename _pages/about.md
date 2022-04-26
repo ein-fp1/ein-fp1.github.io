@@ -1,3 +1,9 @@
+---
+permalink: /about/
+title: "ein-fp1"
+excerpt: "Software Engineer"
+---
+
 ## 소개
 디자인 사고를 지향하는 개발자
 
