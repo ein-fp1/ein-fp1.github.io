@@ -1,5 +1,6 @@
 ---
 permalink: /about/
+layout: archive
 title: "ein-fp1"
 excerpt: "Software Engineer"
 ---
