@@ -3,6 +3,7 @@ permalink: /about/
 layout: home
 title: "ein-fp1"
 excerpt: "Software Engineer"
+author_profile: true
 ---
 
 ## 소개
