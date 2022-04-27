@@ -20,7 +20,7 @@ title                    : "ein-fp1"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "ein-fp1"
-description              : "An amazing website."
+description              : "Software Engineer"
 url                      : "https://ein-fp1.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
