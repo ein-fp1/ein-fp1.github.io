@@ -13,7 +13,7 @@ author_profile: true
 
 ## 관심 기술
 ### Front-end & Back-end
-Vue.js, Nuxt.js, Vuex, Storybook, Lerna.js Yarn Workspace, Spring Boot, Hibernate, Clean Architecture, JWT, HMac, Elasticsearch, Kafka, RabbitMQ
+Vue.js, Nuxt.js, Vuex, Storybook, Lerna.js Yarn Workspace, Spring Boot, Hibernate, Clean Architecture, JWT, HMAC, Elasticsearch, Kafka, RabbitMQ
 ### Infra
 AWS ECS, ELB, Jenkins, Verdaccio
 
