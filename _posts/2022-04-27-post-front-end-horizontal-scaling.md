@@ -1,9 +1,7 @@
 ---
 title: "Architecture: 프론트엔드 서비스 수평적 확장을 위한 설계"
 categories:
-  - Front-end
   - Architecture
-  - Design
 tags:
   - front-end
   - vertical scaling
