@@ -7,6 +7,7 @@ tags:
   - legacy system
   - rabbitmq
   - kafka
+  - aws ecs
 ---
 
 ## 사례
@@ -17,13 +18,13 @@ tags:
 * 지속적인 기능 업데이트로 인해 B Service와 C Service의 부하가 증가하여 A Service와 두 서비스간의 **응답지연시간**이 대폭 증가
 * 파트너사측 담당자와 접수된 이슈를 **7일 내 조치**하기로 협의
 
-## 사용된 기술
+## 환경 및 기술
 * Spring Boot 2.x
 * Netflix Zuul
 * RabbitMQ
 * AWS ECS
 
-## 대응 방안
+## 설계 및 구현
 ![Architecture_02](/assets/images/20220430_02.png)
 * 스케일 아웃으로 임시 조치
 * 파트너사의 요청에 대한 책임을 내부 시스템이 가질 수 있도록 시스템 구성 변경
