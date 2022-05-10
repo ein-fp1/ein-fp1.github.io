@@ -1,5 +1,5 @@
 ---
-title: "Architecture: 프론트엔드 서비스 수평적 확장을 위한 설계"
+title: "Architecture: 프론트엔드 서비스 기민한 확장을 위한 아키텍처 설계"
 categories:
   - Architecture
 tags:
@@ -7,4 +7,42 @@ tags:
   - vertical scaling
 ---
 
-사업의 규모가 커지면서 빠르게 프로덕트를 생산하기 위한 전략
+## 개요
+사업 구조 특성상 룩과 데이터를 제외하고 기존에 서비스중인 프로덕트와 공통 요소가 많은 신규 프로덕트 개발이 필요한 상황이 발생하였다.
+Copy & Paste 로 대응할 경우 기능 업데이트 시 유지보수 비용이 가파르게 증가하게 된다.
+본 문서에서는 공통적인 요소와 가변적인 요소를 정의하고 유지보수 비용을 절감하기 위해 확장 가능한 프론트엔드 아키텍처를 설계한다.
+
+## 사례
+![Architecture_01](/assets/images/20220503_01.png)
+### 공통적인 요소
+* UX
+* 레이아웃 및 UI 컴포넌트 구성
+* 자체 구현한 공통 모듈
+### 가변적인 요소
+* 사용자 정보 및 인증 체계
+* 결제 모듈
+* UI 테마
+* 콘텐츠 정보
+
+## 환경 및 기술
+* Vue.js
+  * Nuxt.js
+* Storybook
+* Lerna.js
+* Yarn Workspace
+
+## 설계
+![Architecture_02](/assets/images/20220503_02.png)
+* 최상위 경로에는 apps 와 libs 로 구성
+  * apps: 웹 애플리케이션을 관리하기 위한 경로
+    * 프로덕트 패키지와 스토리북 패키지로 구성
+  * libs: 웹 에플리케이션에 사용될 라이브러리를 관리하기 위한 경로
+    * shared 라이브러리와 dependent 라이브러리로 구분
+      * shared 라이브러리: 모든 웹 애플리케이션에서 참조 가능한 라이브러리 
+        * core, ui components와 utils 로 구성
+          * core: 프로덕트와 관련된 핵심 패키지
+          * ui components: 공통 컴포넌트로 구성되며 Storybook 환경에서 개발
+          * utils: 유틸형 라이브러리 패키지
+        * 패키지의 순환 참조를 방지하기 위해 다음과 같이 의존성을 구성
+          ![Architecture_03](/assets/images/20220503_03.png)
+    * dependent 라이브러리: 특정 웹 애플리케이션 그룹에 종속된 라이브러리이며 웹 애플리케이션 패키지에서만 참조 가능
